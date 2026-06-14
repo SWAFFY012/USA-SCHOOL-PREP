@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-gold: #E5C38E;
+  --color-gold-light: #F9EEDD;
+  --color-gold-dark: #BCA06B;
+  --color-deep-bg: #140806;
+  --color-card-bg: #1E110C;
+  --color-border-dark: #38211A;
+}
+
+/* Base custom animations & micro-interactions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.relative-height {
+  min-height: calc(100vh - 80px);
+}
+
+/* Custom scrollbar to keep layout clean */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E5C38E;
+}
+
+/* High-end repeating background patterns */
+.bg-luxury-grid {
+  background-color: #140806;
+  background-image: 
+    radial-gradient(circle at 15% 25%, rgba(240, 115, 60, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(229, 195, 142, 0.08) 0%, transparent 50%),
+    linear-gradient(to right, rgba(240, 115, 60, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(240, 115, 60, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+}
+
+.bg-luxury-diamonds {
+  background-color: #100604;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(240, 115, 60, 0.1) 0%, transparent 55%),
+    linear-gradient(45deg, rgba(240, 115, 60, 0.015) 25%, transparent 25%, transparent 75%, rgba(240, 115, 60, 0.015) 75%),
+    linear-gradient(45deg, rgba(240, 115, 60, 0.015) 25%, transparent 25%, transparent 75%, rgba(240, 115, 60, 0.015) 75%);
+  background-size: 100% 100%, 60px 60px, 60px 60px;
+  background-position: 0 0, 0 0, 30px 30px;
+}
+
+/* Beautiful silk/wave overlays for luxury sections */
+.luxury-overlay-waves {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(240, 115, 60, 0.09) 0px, transparent 40%),
+    radial-gradient(at 90% 80%, rgba(188, 160, 107, 0.06) 0px, transparent 40%);
+  opacity: 0.95;
+  z-index: 0;
+}
+
+/* Beautiful custom glowing gold patterns */
+.luxury-curves {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cpath d='M-100,200 C300,100 500,400 900,300 C1300,200 1500,500 1700,450' fill='none' stroke='%23F0733C' stroke-width='1.5'/%3E%3Cpath d='M-100,350 C400,250 600,550 1000,450 C1400,350 1500,700 1700,600' fill='none' stroke='%23E5C38E' stroke-width='1'/%3E%3Cpath d='M-100,50 C200,-50 400,250 800,150 C1200,50 1400,300 1700,250' fill='none' stroke='%23F0733C' stroke-width='0.5' stroke-dasharray='10, 10'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+

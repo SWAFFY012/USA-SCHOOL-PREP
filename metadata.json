@@ -1,0 +1,6 @@
+{
+  "name": "USA Relocation Language School",
+  "description": "Premium English language preparation school for relocation, visa success, and adapting to life in the United States.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
