@@ -243,7 +243,7 @@ export default function Cabinet({ language }: CabinetProps) {
                   <div className="hidden xl:flex items-center space-x-2 bg-gold/5 px-3 py-1.5 rounded-lg border border-gold/10">
                     <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
                     <span className="poriadok-copy text-sm text-gold-light">
-                      {language === 'ru' ? 'Профиль' : 'Profile'}
+                      {language === 'ru' ? `Профиль: ${userName}` : `Profile: ${userName}`}
                     </span>
                   </div>
                   <button
