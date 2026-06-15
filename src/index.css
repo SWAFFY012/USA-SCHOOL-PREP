@@ -85,6 +85,44 @@
   --reveal-x: 42px;
 }
 
+.premium-radio {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  border: 2px solid rgba(249, 238, 221, 0.42);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.premium-radio::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: transparent;
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.premium-radio[data-selected="true"] {
+  border-color: #E5C38E;
+  background: rgba(229, 195, 142, 0.08);
+  box-shadow: 0 0 0 4px rgba(229, 195, 142, 0.10);
+}
+
+.premium-radio[data-selected="true"]::after {
+  background: #E5C38E;
+  box-shadow: 0 0 12px rgba(229, 195, 142, 0.7);
+}
+
 #levels-section .font-mono,
 #levels-section .font-serif,
 #quiz-section .font-mono,

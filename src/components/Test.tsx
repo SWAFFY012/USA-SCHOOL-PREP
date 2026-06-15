@@ -149,11 +149,7 @@ export default function Test({ language }: TestProps) {
                       className="p-6 text-left rounded-[1.25rem]"
                     >
                       <div className="flex items-center space-x-4">
-                        <div className={`w-5 duration-200 h-5 rounded-full border flex items-center justify-center ${
-                          isSelected ? 'border-gold bg-gold' : 'border-gray-600'
-                        }`}>
-                          {isSelected && <div className="w-2 h-2 bg-black rounded-full" />}
-                        </div>
+                        <span className="premium-radio" data-selected={isSelected} aria-hidden="true" />
                         <p className="poriadok-copy text-lg sm:text-xl lg:text-2xl text-gray-100">
                           {option.text}
                         </p>

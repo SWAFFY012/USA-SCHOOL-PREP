@@ -441,11 +441,7 @@ export default function Cabinet({ language }: CabinetProps) {
                               className="p-4 rounded-xl text-left"
                             >
                               <div className="flex items-start space-x-3">
-                                <div className={`w-3.5 h-3.5 rounded-full border mt-0.5 flex items-center justify-center ${
-                                  isChosen ? 'border-gold bg-gold' : 'border-gray-600'
-                                }`}>
-                                  {isChosen && <div className="w-1 h-1 bg-black rounded-full" />}
-                                </div>
+                                <span className="premium-radio mt-0.5" data-selected={isChosen} aria-hidden="true" />
                                 <p className="font-sans text-xs sm:text-sm font-light leading-relaxed">{option.text}</p>
                               </div>
                             </GorillaGlass>
