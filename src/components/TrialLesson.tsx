@@ -85,7 +85,7 @@ export default function TrialLesson({ language }: TrialProps) {
                     id="trial-download-bonus-btn"
                     onClick={handleDownloadGuide}
                     disabled={downGuide}
-                    className="inline-flex items-center space-x-2 bg-white/[0.03] hover:bg-gold hover:text-black text-gold border border-white/10 p-2.5 px-4 rounded-xl font-mono text-[10px] uppercase font-bold tracking-widest active:scale-95 transition-all text-left cursor-pointer"
+                    className="inline-flex items-center space-x-2 bg-white/[0.03] hover:bg-gold hover:text-black text-gold border border-white/10 p-2.5 px-4 rounded-xl font-mono text-[10px] uppercase font-bold tracking-widest transition-all text-left cursor-pointer"
                   >
                     <Download size={13} className={downGuide ? 'animate-bounce' : ''} />
                     <span>{downGuide ? 'Downloading...' : 'Скачать PDF Гайд'}</span>

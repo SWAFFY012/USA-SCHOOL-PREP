@@ -26,7 +26,7 @@ export default function GorillaGlass({
         motion-reveal
         backdrop-blur-2xl
         transition-all duration-300
-        ${isInteractive ? 'cursor-pointer hover:scale-[1.02] active:scale-[0.99]' : ''}
+        ${isInteractive ? 'cursor-pointer hover:scale-[1.02]' : ''}
         ${isSelected 
           ? 'bg-gold/[0.04] border-gold/40 shadow-[0_20px_50px_rgba(197,160,89,0.18),inset_0_1px_2px_rgba(255,255,255,0.2)]' 
           : 'bg-white/[0.03] border-white/10 hover:bg-white/[0.05] hover:border-white/15 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.12)]'

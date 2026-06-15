@@ -64,9 +64,11 @@ export default function Schedule({ language }: ScheduleProps) {
   }, []);
 
   const handleBook = (id: string) => {
-    if (!reservedIds.includes(id)) {
-      setReservedIds([...reservedIds, id]);
-    }
+    setReservedIds((current) => (
+      current.includes(id)
+        ? current.filter((item) => item !== id)
+        : [...current, id]
+    ));
   };
 
   const categories = [
@@ -203,17 +205,16 @@ export default function Schedule({ language }: ScheduleProps) {
                       <button
                         id={`schedule-book-btn-${item.id}`}
                         onClick={() => handleBook(item.id)}
-                        disabled={isBooked}
                         className={`w-full py-3 sm:py-3.5 rounded-xl font-serif text-xs uppercase tracking-widest font-bold transition-all cursor-pointer ${
                           isBooked
-                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
-                            : 'bg-white/[0.03] hover:bg-gold hover:text-black border border-white/10 text-gold hover:border-transparent active:scale-95'
+                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hover:bg-rose-500/10 hover:text-rose-300 hover:border-rose-500/25'
+                            : 'bg-white/[0.03] hover:bg-gold hover:text-black border border-white/10 text-gold hover:border-transparent'
                         }`}
                       >
                         {isBooked ? (
                           <span className="flex items-center justify-center space-x-1 uppercase tracking-widest text-[10px]">
                             <Check size={11} />
-                            <span>{t.schedule.spotSelected}</span>
+                            <span>{language === 'ru' ? 'Снять бронь' : 'Cancel Seat'}</span>
                           </span>
                         ) : (
                           t.schedule.bookSpot

@@ -372,10 +372,12 @@ export default function Cabinet({ language }: CabinetProps) {
                                   : 'bg-white/[0.02] text-gray-400 border border-white/5 hover:bg-white/5 hover:text-white'
                               }`}
                             >
-                              {isComplete ? 'Complete' : 'Mark Done'}
+                              {isComplete ? (language === 'ru' ? 'Готово' : 'Complete') : (language === 'ru' ? 'Отметить' : 'Mark Done')}
                             </button>
                           ) : (
-                            <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-gold/80">VIP LOCK</span>
+                            <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-gold/80">
+                              {language === 'ru' ? 'VIP доступ' : 'VIP LOCK'}
+                            </span>
                           )}
 
                         </GorillaGlass>
@@ -409,7 +411,9 @@ export default function Cabinet({ language }: CabinetProps) {
                       {/* Interactive question dialogue frame */}
                       <GorillaGlass className="p-5 rounded-xl space-y-3 relative overflow-hidden !bg-white/[0.02]">
                         <div className="absolute top-0 left-0 w-0.5 h-full bg-gold animate-pulse" />
-                        <span className="font-mono text-[9px] uppercase tracking-widest text-[#9D9DA5] font-bold">Consulate Interrogation Window</span>
+                        <span className="font-mono text-[9px] uppercase tracking-widest text-[#9D9DA5] font-bold">
+                          {language === 'ru' ? 'Окно консульского интервью' : 'Consulate Interrogation Window'}
+                        </span>
                         <p id="sim-question-text" className="font-sans text-sm sm:text-base text-white font-semibold leading-normal">
                           {simQuestions[currentSimQuestion].question}
                         </p>
@@ -417,7 +421,9 @@ export default function Cabinet({ language }: CabinetProps) {
 
                       {/* Response choices radio slots */}
                       <div className="space-y-3">
-                        <span className="font-mono text-[10px] uppercase text-gray-400 font-bold block tracking-wider">Select your response strategy:</span>
+                        <span className="font-mono text-[10px] uppercase text-gray-400 font-bold block tracking-wider">
+                          {language === 'ru' ? 'Выберите стратегию ответа:' : 'Select your response strategy:'}
+                        </span>
                         
                         {simQuestions[currentSimQuestion].options.map((option, idx) => {
                           const isChosen = selectedAnswers[currentSimQuestion] === option.outcome;
@@ -452,7 +458,9 @@ export default function Cabinet({ language }: CabinetProps) {
                         }`}>
                           <div className="flex items-center space-x-1.5 mb-1.5">
                             <AlertCircle size={14} className="flex-shrink-0" />
-                            <span className="font-mono text-[9px] uppercase font-black tracking-widest leading-none">Diagnostic Explanation</span>
+                            <span className="font-mono text-[9px] uppercase font-black tracking-widest leading-none">
+                              {language === 'ru' ? 'Разбор ответа' : 'Diagnostic Explanation'}
+                            </span>
                           </div>
                           <p className="font-sans font-light">
                             {simQuestions[currentSimQuestion].options.find(
@@ -472,7 +480,7 @@ export default function Cabinet({ language }: CabinetProps) {
                             selectedAnswers[currentSimQuestion] === undefined ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
                           }`}
                         >
-                          {currentSimQuestion === simQuestions.length - 1 ? 'Show Final report' : t.cabinet.nextSimQuestion}
+                          {currentSimQuestion === simQuestions.length - 1 ? (language === 'ru' ? 'Показать итоговый отчёт' : 'Show Final report') : t.cabinet.nextSimQuestion}
                         </button>
                       </div>
 
@@ -508,11 +516,15 @@ export default function Cabinet({ language }: CabinetProps) {
 
                 {/* Right Side Info Stats meters gauge */}
                 <GorillaGlass className="lg:col-span-4 p-5 rounded-2xl space-y-6">
-                  <h4 className="font-mono text-[10px] uppercase text-[#9D9DA5] font-bold tracking-widest pb-3 border-b border-white/5 block">Visa Approval Dashboard</h4>
+                  <h4 className="font-mono text-[10px] uppercase text-[#9D9DA5] font-bold tracking-widest pb-3 border-b border-white/5 block">
+                    {language === 'ru' ? 'Панель шансов на одобрение визы' : 'Visa Approval Dashboard'}
+                  </h4>
                   
                   {/* Score Indicator */}
                   <div className="space-y-1 text-center py-4 bg-white/[0.01] rounded-lg border border-white/5">
-                    <span className="text-[9px] font-mono text-gray-500 block uppercase font-bold tracking-widest">Visa Success Index</span>
+                    <span className="text-[9px] font-mono text-gray-500 block uppercase font-bold tracking-widest">
+                      {language === 'ru' ? 'Индекс визового успеха' : 'Visa Success Index'}
+                    </span>
                     <span id="calculated-visa-index" className="font-serif text-3xl text-gold font-normal">{calculateVisaApprovalChance()}%</span>
                   </div>
 
@@ -658,7 +670,7 @@ export default function Cabinet({ language }: CabinetProps) {
 
               <button
                 type="submit"
-                className="w-full bg-gold hover:bg-gold-light text-black font-semibold rounded-xl py-3.5 text-xs uppercase tracking-widest transition-all cursor-pointer shadow-[0_5px_15px_rgba(229,195,142,0.15)] hover:shadow-[0_8px_25px_rgba(249,238,221,0.3)] active:scale-[0.98] text-center"
+                className="w-full bg-gold hover:bg-gold-light text-black font-semibold rounded-xl py-3.5 text-xs uppercase tracking-widest transition-all cursor-pointer shadow-[0_5px_15px_rgba(229,195,142,0.15)] hover:shadow-[0_8px_25px_rgba(249,238,221,0.3)] text-center"
               >
                 {language === 'ru' ? 'Продолжить' : 'Log In & Open Platform'}
               </button>

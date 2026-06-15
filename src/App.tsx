@@ -39,45 +39,20 @@ export default function App() {
       '#roadmap-timeline > *',
     ].join(',');
 
-    const sections = [
-      'levels-section',
-      'quiz-section',
-      'teachers-section',
-      'schedule-section',
-      'formats-section',
-      'pricing-section',
-      'cabinet-section',
-      'trial-section',
-    ];
-
     const observed = new WeakSet<Element>();
-    let frameId = 0;
-
-    const isSectionFarAway = (section: Element) => {
-      const rect = section.getBoundingClientRect();
-      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-      return rect.bottom < -viewportHeight * 0.45 || rect.top > viewportHeight * 1.45;
-    };
-
-    const updateRevealState = () => {
-      frameId = 0;
-
-      sections.forEach((sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (!section) return;
-
-        const farAway = isSectionFarAway(section);
-        section.querySelectorAll<HTMLElement>('.motion-reveal').forEach((el) => {
-          el.classList.add('is-ready');
-          el.classList.toggle('is-visible', !farAway);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
         });
-      });
-    };
-
-    const scheduleRevealUpdate = () => {
-      if (frameId) return;
-      frameId = window.requestAnimationFrame(updateRevealState);
-    };
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -6% 0px',
+      },
+    );
 
     const prepareRevealElements = () => {
       document.querySelectorAll<HTMLElement>(revealSelectors).forEach((el, index) => {
@@ -85,11 +60,10 @@ export default function App() {
         observed.add(el);
 
         const direction = index % 3 === 0 ? 'motion-left' : index % 3 === 1 ? 'motion-rise' : 'motion-right';
-        el.classList.add('motion-reveal', direction);
+        el.classList.add('motion-reveal', 'is-ready', direction);
         el.style.setProperty('--reveal-delay', `${Math.min((index % 5) * 55, 220)}ms`);
+        observer.observe(el);
       });
-
-      scheduleRevealUpdate();
     };
 
     prepareRevealElements();
@@ -98,14 +72,10 @@ export default function App() {
       prepareRevealElements();
     });
     mutationObserver.observe(document.body, { childList: true, subtree: true });
-    window.addEventListener('scroll', scheduleRevealUpdate, { passive: true });
-    window.addEventListener('resize', scheduleRevealUpdate);
 
     return () => {
-      if (frameId) window.cancelAnimationFrame(frameId);
+      observer.disconnect();
       mutationObserver.disconnect();
-      window.removeEventListener('scroll', scheduleRevealUpdate);
-      window.removeEventListener('resize', scheduleRevealUpdate);
     };
   }, [language]);
 

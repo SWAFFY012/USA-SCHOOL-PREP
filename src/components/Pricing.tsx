@@ -162,7 +162,7 @@ export default function Pricing({ language }: PricingProps) {
                   <button
                     id={`price-buy-btn-${plan.id}`}
                     onClick={() => handleOpenCheckout(plan)}
-                    className={`w-full py-3.5 rounded-xl font-sans text-xs uppercase tracking-widest font-bold transition-all cursor-pointer active:scale-95 ${
+                    className={`w-full py-3.5 rounded-xl font-sans text-xs uppercase tracking-widest font-bold transition-all cursor-pointer ${
                       isFeatured
                         ? 'bg-gold hover:bg-gold-light text-black shadow-lg'
                         : 'bg-[#15151A] text-gold hover:bg-gold hover:text-black border border-border-dark hover:border-transparent'
@@ -274,7 +274,7 @@ export default function Pricing({ language }: PricingProps) {
                 {/* Core Payment Buttons */}
                 <button
                   type="submit"
-                  className="w-full bg-gold hover:bg-gold-light text-black py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all active:scale-95 flex items-center justify-center space-x-2 cursor-pointer shadow-md"
+                  className="w-full bg-gold hover:bg-gold-light text-black py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all flex items-center justify-center space-x-2 cursor-pointer shadow-md"
                 >
                   <CreditCard size={15} />
                   <span>{language === 'ru' ? 'Сформировать бронь' : 'Confirm secure payment'}</span>

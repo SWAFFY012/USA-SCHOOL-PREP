@@ -181,7 +181,7 @@ export default function Test({ language }: TestProps) {
                   id="quiz-next-btn"
                   onClick={handleNext}
                   disabled={selectedAnswers[currentIdx] === undefined}
-                  className={`flex items-center space-x-2.5 bg-gold text-black px-8 py-4 rounded-xl font-serif text-sm uppercase tracking-widest font-bold hover:bg-gold-light active:scale-95 transition-all ${
+                  className={`flex items-center space-x-2.5 bg-gold text-black px-8 py-4 rounded-xl font-serif text-sm uppercase tracking-widest font-bold hover:bg-gold-light transition-all ${
                     selectedAnswers[currentIdx] === undefined ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer shadow-md'
                   }`}
                 >
@@ -201,7 +201,7 @@ export default function Test({ language }: TestProps) {
                 <div className="space-y-3">
                   <div className="inline-flex items-center space-x-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1.5 rounded-full text-xs font-mono font-bold">
                     <CheckCircle2 size={12} />
-                    <span>Diagnostics Complete</span>
+                    <span>{language === 'ru' ? 'Диагностика завершена' : 'Diagnostics Complete'}</span>
                   </div>
                   <h3 id="quiz-result-header" className="font-serif text-3xl sm:text-4xl text-white font-normal tracking-tight">
                     {t.quiz.resultTitle.replace('{{level}}', levelNameClean)}
@@ -263,7 +263,7 @@ export default function Test({ language }: TestProps) {
                         </div>
                         <button
                           type="submit"
-                          className="sm:col-span-2 bg-gold hover:bg-gold-light text-black font-semibold py-4 rounded-xl text-xs uppercase tracking-widest transition-all active:scale-95 shadow-md mt-2 cursor-pointer font-serif"
+                          className="sm:col-span-2 bg-gold hover:bg-gold-light text-black font-semibold py-4 rounded-xl text-xs uppercase tracking-widest transition-all shadow-md mt-2 cursor-pointer font-serif"
                         >
                           {language === 'ru' ? 'Забрать карту и записаться на разбор' : 'Unlock and register track'}
                         </button>
