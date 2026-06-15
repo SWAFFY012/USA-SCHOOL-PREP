@@ -168,7 +168,7 @@ export default function Hero({ language }: HeroProps) {
           className="lg:absolute lg:right-16 xl:right-24 lg:bottom-12 xl:bottom-20 max-w-sm sm:max-w-md text-left lg:text-right p-0 pt-10 lg:pt-0"
         >
           <div id="hero-floating-badge" className="space-y-2.5">
-            <h4 className="font-serif italic text-3xl sm:text-4xl lg:text-5xl text-white font-medium leading-none">
+            <h4 className="premium-section-title text-2xl sm:text-3xl lg:text-4xl text-white leading-tight">
               New York Integration
             </h4>
             <p className="poriadok-display text-lg sm:text-xl lg:text-2xl text-[#F7E8D0] leading-relaxed">
