@@ -171,7 +171,7 @@ export default function Hero({ language }: HeroProps) {
             <h4 className="font-serif italic text-3xl sm:text-4xl lg:text-5xl text-white font-medium leading-none">
               New York Integration
             </h4>
-            <p className="font-serif italic text-base sm:text-lg lg:text-xl text-[#DFC49E] font-light leading-relaxed">
+            <p className="poriadok-display text-lg sm:text-xl lg:text-2xl text-[#F7E8D0] leading-relaxed">
               {language === 'ru' 
                 ? 'Семинар по визовой адаптации и интеграции в культуру США стартует сегодня.' 
                 : 'Visa adaptation & cultural integration pipeline active for spring cohorts.'}
