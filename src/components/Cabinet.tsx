@@ -85,12 +85,14 @@ export default function Cabinet({ language }: CabinetProps) {
         {
           text: 'Choice A: "I got a visa petition. I want to search for a developer job there, move my family, and eventually buy a house in California."',
           outcome: 'denied',
-          explanation: '❌ REJECTED. This answer directly flags permanent immigrant intent. Under non-immigrant categories (or before permanent residency triggers), saying you want to move permanently leads immediately to rejection under section 214(b) (presumption of immigrant intent).'
+          explanation: '❌ REJECTED. This answer directly flags permanent immigrant intent. Under non-immigrant categories (or before permanent residency triggers), saying you want to move permanently leads immediately to rejection under section 214(b) (presumption of immigrant intent).',
+          explanationRu: '❌ ОТКЛОНЕНО. Такой ответ прямо показывает намерение переехать на постоянной основе. Для неиммиграционных категорий это риск: фраза о работе, семье и покупке дома может привести к отказу по статье 214(b), потому что консул увидит иммиграционный мотив.'
         },
         {
           text: 'Choice B: "I am travelling to coordinate local operations and deliver expert leadership per my approved petition. My focus is strictly aligned with the key deliverables and system timelines outlined in my case file."',
           outcome: 'approved',
-          explanation: '🏆 APPROVED! This formula matches the visa status bounds, links direct to the petition, is specific, professional, and avoids permanent residency landmines.'
+          explanation: '🏆 APPROVED! This formula matches the visa status bounds, links direct to the petition, is specific, professional, and avoids permanent residency landmines.',
+          explanationRu: '🏆 ОДОБРЕНО. Формулировка остаётся в рамках визового статуса, ссылается на одобренную петицию, звучит профессионально и не создаёт ощущения, что вы едете нарушать условия пребывания.'
         }
       ]
     },
@@ -100,12 +102,14 @@ export default function Cabinet({ language }: CabinetProps) {
         {
           text: 'Choice A: "I have been designing websites for 10 years, I have won some design awards, and bloggers have written articles about my projects."',
           outcome: 'denied',
-          explanation: '❌ REJECTED. Too vague and defensive. Consulates are not design judges; they look for official statutory alignment matching your specific petition evidence.'
+          explanation: '❌ REJECTED. Too vague and defensive. Consulates are not design judges; they look for official statutory alignment matching your specific petition evidence.',
+          explanationRu: '❌ ОТКЛОНЕНО. Ответ слишком общий и звучит как попытка убедить без опоры на доказательства. Консулу нужны не эмоции и не общие достижения, а чёткая связь с критериями вашей петиции.'
         },
         {
           text: 'Choice B: "I am a leading software architect with critical evidence approved in my petition, showing significant public media coverage, high-remuneration contracts, and lead development roles at major technology products."',
           outcome: 'approved',
-          explanation: '🏆 APPROVED! Focuses precisely on approved statutory petition criteria, matches legal standards, and exhibits high institutional confidence.'
+          explanation: '🏆 APPROVED! Focuses precisely on approved statutory petition criteria, matches legal standards, and exhibits high institutional confidence.',
+          explanationRu: '🏆 ОДОБРЕНО. Ответ точно опирается на подтверждённые критерии петиции: публичное признание, высокий уровень оплаты и ключевые роли в значимых проектах. Это звучит уверенно и юридически аккуратно.'
         }
       ]
     }
@@ -463,9 +467,14 @@ export default function Cabinet({ language }: CabinetProps) {
                             </span>
                           </div>
                           <p className="font-sans font-light">
-                            {simQuestions[currentSimQuestion].options.find(
-                              (opt) => opt.outcome === selectedAnswers[currentSimQuestion]
-                             )?.explanation}
+                            {(() => {
+                              const selectedOption = simQuestions[currentSimQuestion].options.find(
+                                (opt) => opt.outcome === selectedAnswers[currentSimQuestion]
+                              );
+                              return language === 'ru'
+                                ? selectedOption?.explanationRu
+                                : selectedOption?.explanation;
+                            })()}
                           </p>
                         </div>
                       )}

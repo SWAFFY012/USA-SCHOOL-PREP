@@ -112,7 +112,7 @@ export const translations = {
       targetLabel: 'Основная цель переезда',
       targetPlaceholder: 'Например: виза O-1, работа в IT, роды, запуск стартапа',
       submitBtn: 'Записаться на сессию',
-      successMsg: 'Заявка успешно отправлена! Мы свяжемся с вами в Telegram/WhatsApp в течение 15 минут.',
+      successMsg: 'Заявка успешно отправлена! Мы свяжемся с вами в Telegram/WhatsApp как можно скорее.',
     },
     cabinet: {
       title: 'Личный кабинет студента VIP-палаты',
@@ -253,7 +253,7 @@ export const translations = {
       targetLabel: 'Primary relocation focus',
       targetPlaceholder: 'E.g., O-1 visa defense, tech employment, entrepreneurship',
       submitBtn: 'Get Custom Assessment',
-      successMsg: 'Booking received! We will match your slot and contact you via Telegram or WhatsApp within 15 minutes.',
+      successMsg: 'Booking received! We will match your slot and contact you via Telegram or WhatsApp as soon as possible.',
     },
     cabinet: {
       title: 'VIP Student Portal Preview',

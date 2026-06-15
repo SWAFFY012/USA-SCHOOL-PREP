@@ -1,6 +1,6 @@
 import { Language } from '../types';
 import { translations } from '../translations';
-import { ChevronRight, ArrowDown, Award, Users, CheckCircle2 } from 'lucide-react';
+import { ChevronRight, Award, Users, CheckCircle2 } from 'lucide-react';
 // @ts-ignore
 import heroImage from '../assets/images/hero_premium_ny_1781374947311.jpg';
 import { motion } from 'motion/react';
@@ -179,15 +179,6 @@ export default function Hero({ language }: HeroProps) {
           </div>
         </motion.div>
 
-        {/* Scroll down mouse animation */}
-        <div 
-          id="hero-scroll-indicator"
-          onClick={() => handleScroll('levels-section')}
-          className="hidden lg:flex flex-col items-center justify-center cursor-pointer mt-8 py-2 space-y-1 text-gray-500 hover:text-gold transition-colors"
-        >
-          <span className="font-mono text-[9px] tracking-widest uppercase">{t.hero.scrolledDown}</span>
-          <ArrowDown size={14} className="animate-bounce text-gold" />
-        </div>
       </div>
     </section>
   );

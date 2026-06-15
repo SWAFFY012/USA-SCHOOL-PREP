@@ -30,7 +30,7 @@ export default function Levels({ language }: LevelsProps) {
           className="text-center max-w-3xl mx-auto mb-16 space-y-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 id="levels-title" className="premium-section-title text-2xl sm:text-3xl text-white leading-tight">
@@ -50,7 +50,7 @@ export default function Levels({ language }: LevelsProps) {
             className="lg:col-span-5 space-y-4"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           >
             {list.map((level) => {
@@ -90,7 +90,7 @@ export default function Levels({ language }: LevelsProps) {
             className="lg:col-span-7 bg-white/[0.03] backdrop-blur-2xl border border-white/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.12)] rounded-3xl p-6 sm:p-12 relative overflow-hidden"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: "-100px" }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             {/* Ambient Backlight */}
