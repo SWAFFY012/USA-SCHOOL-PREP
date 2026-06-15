@@ -21,14 +21,10 @@ export default function Teachers({ language }: TeachersProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left w-full">
         {/* Header Block */}
         <div id="teachers-header" className="max-w-3xl mb-20 space-y-5">
-          <div className="inline-flex items-center space-x-2 bg-gold/5 border border-gold/20 px-3 py-1.5 rounded-full">
-            <Mic size={13} className="text-gold" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-gold font-bold">Expert Faculty</span>
-          </div>
-          <h2 id="teachers-title" className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight">
+          <h2 id="teachers-title" className="premium-section-title text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
             {t.teachers.title}
           </h2>
-          <p id="teachers-subtitle" className="font-serif text-xl sm:text-2xl lg:text-3xl text-gray-300 italic font-light max-w-3xl">
+          <p id="teachers-subtitle" className="poriadok-copy text-xl sm:text-2xl lg:text-3xl text-[#F5DED0] leading-relaxed max-w-3xl">
             {t.teachers.subtitle}
           </p>
         </div>
@@ -70,12 +66,12 @@ export default function Teachers({ language }: TeachersProps) {
                       <h3 className="font-serif italic text-2xl text-white pr-2 font-medium">
                         {teacher.name}
                       </h3>
-                      <p className="font-serif text-xs text-gold uppercase tracking-wider font-semibold mt-1">
+                      <p className="poriadok-copy text-base text-gold-light mt-1">
                         {teacher.role}
                       </p>
                     </div>
 
-                    <p className="font-serif text-base lg:text-lg text-gray-300 leading-relaxed font-light italic">
+                    <p className="poriadok-copy text-lg lg:text-xl text-[#F5DED0] leading-relaxed">
                       {teacher.bio}
                     </p>
                   </div>
@@ -83,7 +79,7 @@ export default function Teachers({ language }: TeachersProps) {
                   {/* Specialty Widgets */}
                   <div className="space-y-4 pt-5 border-t border-border-dark">
                     <div>
-                      <span className="font-mono text-[9px] uppercase text-gray-500 font-bold tracking-widest block mb-2">
+                      <span className="poriadok-copy text-base text-[#D6B7A8] block mb-2">
                         {t.teachers.specialtyLabel}
                       </span>
                       <div className="flex flex-wrap gap-2">
@@ -91,7 +87,7 @@ export default function Teachers({ language }: TeachersProps) {
                           <span
                              id={`teacher-spec-${teacher.id}-${i}`}
                              key={i}
-                             className="text-xs font-serif bg-white/5 hover:bg-white/10 text-gray-200 font-medium px-3.5 py-1.5 rounded-full border border-border-dark transition-colors"
+                             className="poriadok-copy text-sm bg-white/5 hover:bg-white/10 text-gray-100 px-3.5 py-1.5 rounded-full border border-border-dark transition-colors"
                           >
                              {spec}
                           </span>
@@ -104,8 +100,8 @@ export default function Teachers({ language }: TeachersProps) {
                         <div className="flex items-start space-x-2.5">
                           <Mic size={15} className="text-gold mt-0.5 flex-shrink-0" />
                           <div>
-                            <p className="font-mono text-[9px] uppercase text-gray-400 font-bold tracking-widest">Vocal Accent</p>
-                            <p className="font-serif text-xs sm:text-sm text-gold-light mt-0.5">{teacher.accent}</p>
+                            <p className="poriadok-copy text-sm text-[#D6B7A8]">Vocal Accent</p>
+                            <p className="poriadok-copy text-sm sm:text-base text-gold-light mt-0.5">{teacher.accent}</p>
                           </div>
                         </div>
                       </GorillaGlass>

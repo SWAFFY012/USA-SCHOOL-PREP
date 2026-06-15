@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700;900&family=Unbounded:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700;900&family=Poiret+One&family=Unbounded:wght@700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -27,6 +27,101 @@
     0 1px 0 rgba(255, 255, 255, 0.28),
     0 12px 34px rgba(0, 0, 0, 0.52),
     0 0 26px rgba(229, 195, 142, 0.14);
+}
+
+.poriadok-display {
+  font-family: "Poiret One", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+}
+
+.poriadok-copy {
+  font-family: "Poiret One", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-rendering: geometricPrecision;
+}
+
+.premium-section-title {
+  font-family: "Unbounded", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.motion-reveal {
+  opacity: 0;
+  transform: translate3d(var(--reveal-x, 0), 34px, 0) scale(0.985);
+  transition:
+    opacity 720ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 720ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 300ms ease,
+    background-color 300ms ease,
+    box-shadow 300ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.motion-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.motion-rise {
+  --reveal-x: 0;
+}
+
+.motion-left {
+  --reveal-x: -42px;
+}
+
+.motion-right {
+  --reveal-x: 42px;
+}
+
+#levels-section .font-mono,
+#levels-section .font-serif,
+#quiz-section .font-mono,
+#quiz-section .font-serif,
+#teachers-section .font-mono,
+#teachers-section .font-serif,
+#schedule-section .font-mono,
+#schedule-section .font-serif,
+#formats-section .font-mono,
+#formats-section .font-serif,
+#pricing-section .font-mono,
+#pricing-section .font-serif,
+#trial-section .font-mono,
+#trial-section .font-serif,
+#cabinet-section .font-mono,
+#cabinet-section .font-serif {
+  font-family: "Poiret One", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+#levels-section .premium-section-title,
+#quiz-section .premium-section-title,
+#teachers-section .premium-section-title,
+#schedule-section .premium-section-title,
+#formats-section .premium-section-title,
+#pricing-section .premium-section-title,
+#trial-section .premium-section-title,
+#cabinet-section .premium-section-title {
+  font-family: "Unbounded", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+}
+
+@keyframes cardScrollReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--reveal-x, 24px), 28px, 0) scale(0.985);
+  }
+  42%,
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
 }
 
 /* Base custom animations & micro-interactions */
@@ -62,23 +157,22 @@
 
 /* High-end repeating background patterns */
 .bg-luxury-grid {
-  background-color: #140806;
+  background-color: #1b0b07;
   background-image: 
-    radial-gradient(circle at 15% 25%, rgba(240, 115, 60, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 85% 75%, rgba(229, 195, 142, 0.08) 0%, transparent 50%),
-    linear-gradient(to right, rgba(240, 115, 60, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(240, 115, 60, 0.02) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 80px 80px, 80px 80px;
+    radial-gradient(circle at 15% 22%, rgba(240, 115, 60, 0.16) 0%, transparent 42%),
+    radial-gradient(circle at 82% 78%, rgba(229, 195, 142, 0.10) 0%, transparent 48%),
+    linear-gradient(135deg, #24100a 0%, #160806 48%, #100604 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%;
 }
 
 .bg-luxury-diamonds {
-  background-color: #100604;
+  background-color: #1a0905;
   background-image: 
-    radial-gradient(circle at 50% 50%, rgba(240, 115, 60, 0.1) 0%, transparent 55%),
-    linear-gradient(45deg, rgba(240, 115, 60, 0.015) 25%, transparent 25%, transparent 75%, rgba(240, 115, 60, 0.015) 75%),
-    linear-gradient(45deg, rgba(240, 115, 60, 0.015) 25%, transparent 25%, transparent 75%, rgba(240, 115, 60, 0.015) 75%);
-  background-size: 100% 100%, 60px 60px, 60px 60px;
-  background-position: 0 0, 0 0, 30px 30px;
+    radial-gradient(circle at 48% 42%, rgba(240, 115, 60, 0.13) 0%, transparent 52%),
+    radial-gradient(circle at 88% 12%, rgba(188, 160, 107, 0.08) 0%, transparent 36%),
+    linear-gradient(150deg, #210d07 0%, #130604 54%, #0e0503 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%;
+  background-position: center;
 }
 
 /* Beautiful silk/wave overlays for luxury sections */

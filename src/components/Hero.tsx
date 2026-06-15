@@ -78,7 +78,7 @@ export default function Hero({ language }: HeroProps) {
               {/* White beautifully styled Cormorant Garamond description */}
               <motion.p 
                 id="hero-subtitle" 
-                className="font-serif text-base sm:text-lg lg:text-xl text-white/90 font-light leading-relaxed max-w-2xl xl:max-w-3xl mt-4"
+                className="poriadok-display text-lg sm:text-xl lg:text-2xl text-white/92 leading-relaxed max-w-2xl xl:max-w-3xl mt-4"
                 initial={{ opacity: 0, x: -35 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.9, ease: "easeOut", delay: 0.6 }}

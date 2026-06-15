@@ -93,14 +93,10 @@ export default function Schedule({ language }: ScheduleProps) {
         {/* Header Title */}
         <div id="schedule-header" className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
           <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center space-x-2 bg-gold/5 border border-gold/20 px-3 py-1.5 rounded-full">
-              <Calendar size={13} className="text-gold" />
-              <span className="font-mono text-[10px] uppercase tracking-widest text-gold font-bold">Relocation Sessions</span>
-            </div>
-            <h2 id="schedule-title" className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight">
+            <h2 id="schedule-title" className="premium-section-title text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
               {t.schedule.title}
             </h2>
-            <p id="schedule-subtitle" className="font-serif text-xl sm:text-2xl lg:text-3xl text-gray-300 italic font-light">
+            <p id="schedule-subtitle" className="poriadok-copy text-xl sm:text-2xl lg:text-3xl text-[#F5DED0] leading-relaxed">
               {t.schedule.subtitle}
             </p>
           </div>
@@ -175,7 +171,7 @@ export default function Schedule({ language }: ScheduleProps) {
                         <Clock size={16} />
                       </div>
                       <div>
-                        <p className="font-mono text-sm sm:text-base text-white font-bold leading-none">
+                        <p className="poriadok-copy text-base sm:text-lg text-white leading-none">
                           {item.time}
                         </p>
                         <span className="inline-block mt-2 px-2.5 py-1 bg-white/5 rounded text-[9px] font-mono text-gray-400 uppercase font-bold tracking-widest">
@@ -186,10 +182,10 @@ export default function Schedule({ language }: ScheduleProps) {
  
                     {/* Class Details */}
                     <div className="space-y-1.5 md:w-2/5 text-left">
-                      <h4 className="font-serif italic text-lg sm:text-xl lg:text-2xl text-white font-normal">
+                      <h4 className="premium-section-title text-lg sm:text-xl lg:text-2xl text-white leading-tight">
                         {item.title}
                       </h4>
-                      <p className="font-serif text-sm sm:text-base text-gray-400 font-light">
+                      <p className="poriadok-copy text-base sm:text-lg text-[#D6B7A8]">
                         {language === 'ru' ? `Преподаватель: ${item.teacher}` : `Lead Educator: ${item.teacher}`}
                       </p>
                     </div>
@@ -197,7 +193,7 @@ export default function Schedule({ language }: ScheduleProps) {
                     {/* Spots Limit Label */}
                     <div className="flex items-center space-x-2 md:w-1/6">
                       <div className={`w-1.5 h-1.5 rounded-full ${limitSpots <= 1 ? 'bg-rose-500 animate-pulse' : 'bg-gold'}`} />
-                      <span className="font-serif text-sm sm:text-base text-gray-400">
+                      <span className="poriadok-copy text-base sm:text-lg text-[#D6B7A8]">
                         {t.schedule.spotsLeft.replace('{{spots}}', String(limitSpots))}
                       </span>
                     </div>

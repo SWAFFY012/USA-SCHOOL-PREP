@@ -21,14 +21,10 @@ export default function Formats({ language }: FormatsProps) {
         
         {/* Header Section */}
         <div id="formats-header" className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center space-x-2 bg-gold/5 border border-gold/20 px-3 py-1.5 rounded-full">
-            <Layers size={13} className="text-gold" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-gold font-bold">Linguistic Formats</span>
-          </div>
-          <h2 id="formats-title" className="font-serif text-3xl sm:text-4xl text-white font-normal tracking-tight">
+          <h2 id="formats-title" className="premium-section-title text-2xl sm:text-3xl text-white leading-tight">
             {t.formats.title}
           </h2>
-          <p id="formats-subtitle" className="font-serif text-lg sm:text-xl text-gray-300 italic font-light max-w-xl mx-auto">
+          <p id="formats-subtitle" className="poriadok-copy text-xl sm:text-2xl text-[#F5DED0] leading-relaxed max-w-xl mx-auto">
             {t.formats.subtitle}
           </p>
         </div>
@@ -65,10 +61,10 @@ export default function Formats({ language }: FormatsProps) {
 
                   {/* Description Headlines */}
                   <div className="space-y-2">
-                    <h3 className="font-serif italic text-xl sm:text-2xl text-white font-medium">
+                    <h3 className="premium-section-title text-lg sm:text-xl text-white leading-tight">
                       {format.title}
                     </h3>
-                    <p className="font-serif text-base text-gray-300 leading-relaxed font-light italic">
+                    <p className="poriadok-copy text-lg text-[#F5DED0] leading-relaxed">
                       {format.desc}
                     </p>
                   </div>
@@ -82,7 +78,7 @@ export default function Formats({ language }: FormatsProps) {
                         className="flex items-start space-x-3"
                       >
                         <CheckCircle2 size={14} className="text-gold mt-0.5 flex-shrink-0" />
-                        <span className="font-serif text-sm text-gray-300 font-light">
+                        <span className="poriadok-copy text-base text-[#F1D4C4]">
                           {feature}
                         </span>
                       </li>
@@ -93,7 +89,7 @@ export default function Formats({ language }: FormatsProps) {
                 {/* Footnotes time tracker indicator */}
                 <div className="pt-6 mt-6 border-t border-border-dark flex items-center space-x-2 text-gray-500">
                   <Clock size={13} className="text-gold/60" />
-                  <span className="font-mono text-[10px] uppercase tracking-wider font-semibold">
+                  <span className="poriadok-copy text-base">
                     {format.time}
                   </span>
                 </div>

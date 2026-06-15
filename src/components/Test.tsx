@@ -90,14 +90,10 @@ export default function Test({ language }: TestProps) {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-left w-full">
         {/* Header Title */}
         <div id="quiz-header" className="text-center max-w-2xl mx-auto mb-20 space-y-4">
-          <div className="inline-flex items-center space-x-2 bg-gold/5 border border-gold/20 px-3 py-1.5 rounded-full">
-            <Sparkles size={13} className="text-gold" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-gold font-bold">Interactive Diagnostics</span>
-          </div>
-          <h2 id="quiz-title" className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight">
+          <h2 id="quiz-title" className="premium-section-title text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
             {t.quiz.title}
           </h2>
-          <p id="quiz-subtitle" className="font-serif text-xl sm:text-2xl lg:text-3xl text-gray-300 italic font-light max-w-2xl mx-auto">
+          <p id="quiz-subtitle" className="poriadok-copy text-xl sm:text-2xl lg:text-3xl text-[#F5DED0] leading-relaxed max-w-2xl mx-auto">
             {t.quiz.subtitle}
           </p>
         </div>
@@ -118,10 +114,10 @@ export default function Test({ language }: TestProps) {
             <div id="quiz-stepper-container" className="space-y-10">
               {/* Question number and simple progress bar */}
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] sm:text-xs text-gold font-bold uppercase tracking-widest">
+                <span className="poriadok-copy text-base sm:text-lg text-[#F4D0BA]">
                   {t.quiz.questionTitle.replace('{{current}}', String(currentIdx + 1)).replace('{{total}}', String(questions.length))}
                 </span>
-                <span className="font-mono text-xs sm:text-sm text-gray-500">
+                <span className="poriadok-copy text-base sm:text-lg text-[#D6B7A8]">
                   {Math.round(((currentIdx + 1) / questions.length) * 100)}%
                 </span>
               </div>
@@ -135,7 +131,7 @@ export default function Test({ language }: TestProps) {
               </div>
  
               {/* Question Text */}
-              <h3 id="quiz-question-text" className="font-serif italic text-2xl sm:text-3xl lg:text-4xl text-white leading-normal">
+              <h3 id="quiz-question-text" className="premium-section-title text-2xl sm:text-3xl lg:text-4xl text-white leading-normal">
                 {questions[currentIdx].question}
               </h3>
  
@@ -158,7 +154,7 @@ export default function Test({ language }: TestProps) {
                         }`}>
                           {isSelected && <div className="w-2 h-2 bg-black rounded-full" />}
                         </div>
-                        <p className="font-serif text-base sm:text-lg lg:text-xl font-normal text-gray-200">
+                        <p className="poriadok-copy text-lg sm:text-xl lg:text-2xl text-gray-100">
                           {option.text}
                         </p>
                       </div>

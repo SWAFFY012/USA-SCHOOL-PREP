@@ -176,14 +176,10 @@ export default function Cabinet({ language }: CabinetProps) {
         
         {/* Section Header */}
         <div id="cabinet-header" className="max-w-3xl mb-12 space-y-4">
-          <div className="inline-flex items-center space-x-2 bg-gold/5 border border-gold/20 px-3 py-1.5 rounded-full">
-            <ShieldCheck size={13} className="text-gold" />
-            <span className="font-mono text-[10px] uppercase tracking-widest text-gold font-bold">Student Platform Portal</span>
-          </div>
-          <h2 id="cabinet-title" className="font-serif text-3xl sm:text-4xl text-white font-normal tracking-tight">
+          <h2 id="cabinet-title" className="premium-section-title text-2xl sm:text-3xl text-white leading-tight">
             {t.cabinet.title}
           </h2>
-          <p id="cabinet-subtitle" className="font-serif text-lg sm:text-xl text-gray-300 italic font-light">
+          <p id="cabinet-subtitle" className="poriadok-copy text-xl sm:text-2xl text-[#F5DED0] leading-relaxed">
              {t.cabinet.subtitle}
           </p>
         </div>
@@ -242,7 +238,7 @@ export default function Cabinet({ language }: CabinetProps) {
                 <div className="ml-auto flex items-center space-x-3.5">
                   <div className="hidden xl:flex items-center space-x-2 bg-gold/5 px-3 py-1.5 rounded-lg border border-gold/10">
                     <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                    <span className="font-mono text-[9px] text-gold uppercase tracking-widest font-bold">
+                    <span className="poriadok-copy text-sm text-gold-light">
                       {language === 'ru' ? `Профиль: ${userName}` : `Profile: ${userName}`} (VIP)
                     </span>
                   </div>
@@ -271,16 +267,16 @@ export default function Cabinet({ language }: CabinetProps) {
                         {userName ? userName.trim().split(' ').map(n => n[0]).filter(Boolean).join('').slice(0, 2).toUpperCase() : 'AL'}
                       </div>
                       <div>
-                        <h4 className="font-serif text-base font-medium text-white">
+                        <h4 className="poriadok-copy text-lg text-white">
                           {language === 'ru' ? `Добро пожаловать, ${userName || 'Алекс'}!` : `Welcome back, ${userName || 'Alex'}!`}
                         </h4>
-                        <p className="font-mono text-[9px] text-gold uppercase tracking-wider font-bold">
+                        <p className="poriadok-copy text-base text-gold-light">
                           {language === 'ru' ? 'Премиум подписка' : 'Premium Student'}
                         </p>
                       </div>
                     </div>
 
-                    <p className="font-sans text-xs text-gray-400 italic font-light">
+                    <p className="poriadok-copy text-base text-[#D6B7A8]">
                       {t.cabinet.userTarget}
                     </p>
 
@@ -321,7 +317,7 @@ export default function Cabinet({ language }: CabinetProps) {
 
                 {/* Right Column: Recommended Syllabus Video Lesson checkouts */}
                 <div className="lg:col-span-8 space-y-4">
-                  <h4 className="font-serif italic text-lg text-white font-medium flex items-center space-x-2">
+                  <h4 className="poriadok-copy text-xl text-white flex items-center space-x-2">
                     <Video size={17} className="text-gold" />
                     <span>{t.cabinet.mockLessonsHeader}</span>
                   </h4>
@@ -398,7 +394,7 @@ export default function Cabinet({ language }: CabinetProps) {
                 {/* Simulator main controller column */}
                 <div className="lg:col-span-8 space-y-6">
                   <div className="space-y-1.5">
-                    <h4 className="font-serif italic text-lg text-white font-medium flex items-center space-x-2">
+                    <h4 className="poriadok-copy text-xl text-white flex items-center space-x-2">
                       <GraduationCap size={18} className="text-gold" />
                       <span>{t.cabinet.visaHeading}</span>
                     </h4>
@@ -488,7 +484,7 @@ export default function Cabinet({ language }: CabinetProps) {
                       </div>
 
                       <div className="space-y-2">
-                        <h5 className="font-serif italic text-lg text-white font-medium">
+                        <h5 className="poriadok-copy text-xl text-white">
                           {calculateVisaApprovalChance() >= 90 ? t.cabinet.visaApproved : 'Требуется доработка формулировок'}
                         </h5>
                         <p className="font-sans text-xs text-[#A0A0A0] max-w-sm mx-auto leading-relaxed font-light">
@@ -523,17 +519,17 @@ export default function Cabinet({ language }: CabinetProps) {
                   <div className="space-y-4">
                     <div id="sim-bullet-1" className="flex items-start space-x-2.5">
                       <div className="w-5 h-5 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gold text-xs font-mono">1</div>
-                      <p className="font-sans text-xs text-gray-400 leading-snug font-light">Имитируйте допросы по категории F-1, O-1, L-1, EB-1, H-1B</p>
+                      <p className="poriadok-copy text-base text-[#D6B7A8] leading-snug">Имитируйте допросы по категории F-1, O-1, L-1, EB-1, H-1B</p>
                     </div>
 
                     <div id="sim-bullet-2" className="flex items-start space-x-2.5">
                       <div className="w-5 h-5 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gold text-xs font-mono">2</div>
-                      <p className="font-sans text-xs text-gray-400 leading-snug font-light">Проговаривайте фразы голосом по шаблону</p>
+                      <p className="poriadok-copy text-base text-[#D6B7A8] leading-snug">Проговаривайте фразы голосом по шаблону</p>
                     </div>
 
                     <div id="sim-bullet-3" className="flex items-start space-x-2.5">
                       <div className="w-5 h-5 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gold text-xs font-mono">3</div>
-                      <p className="font-sans text-xs text-gray-400 leading-snug font-light">Получайте рецензию от бывших консульских работников США</p>
+                      <p className="poriadok-copy text-base text-[#D6B7A8] leading-snug">Получайте рецензию от бывших консульских работников США</p>
                     </div>
                   </div>
                 </GorillaGlass>
@@ -607,10 +603,10 @@ export default function Cabinet({ language }: CabinetProps) {
               <div className="w-14 h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold mx-auto shadow-[0_0_20px_rgba(204,167,110,0.15)]">
                 <ShieldCheck size={26} />
               </div>
-              <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal uppercase tracking-wide">
+              <h3 className="premium-section-title text-2xl sm:text-3xl text-white leading-tight">
                 {language === 'ru' ? 'Вход в VIP Кабинет' : 'VIP Cabin Entry'}
               </h3>
-              <p className="font-sans text-xs text-gray-400 font-light max-w-sm leading-relaxed">
+              <p className="poriadok-copy text-lg text-[#F5DED0] max-w-sm leading-relaxed">
                 {language === 'ru' 
                   ? 'Введите свои данные для тестирования и моментального получения гостевого доступа к платформе.' 
                   : 'Enter your credentials to test the interactive learning workspace as our exclusive guest.'}
@@ -619,7 +615,7 @@ export default function Cabinet({ language }: CabinetProps) {
 
             <form onSubmit={handleLogin} className="w-full space-y-4 text-left">
               <div className="space-y-1.5">
-                <label className="font-mono text-[9px] uppercase tracking-widest text-[#F9EEDD] font-bold block opacity-90">
+                <label className="poriadok-copy text-base text-[#F9EEDD] block opacity-90">
                   {language === 'ru' ? 'Ваше имя' : 'Your Name'}
                 </label>
                 <input
@@ -633,7 +629,7 @@ export default function Cabinet({ language }: CabinetProps) {
               </div>
 
               <div className="space-y-1.5">
-                <label className="font-mono text-[9px] uppercase tracking-widest text-[#F9EEDD] font-bold block opacity-90">
+                <label className="poriadok-copy text-base text-[#F9EEDD] block opacity-90">
                   {language === 'ru' ? 'Электронная почта' : 'Email address'}
                 </label>
                 <input
@@ -647,7 +643,7 @@ export default function Cabinet({ language }: CabinetProps) {
               </div>
 
               <div className="space-y-1.5">
-                <label className="font-mono text-[9px] uppercase tracking-widest text-[#F9EEDD] font-bold block opacity-90">
+                <label className="poriadok-copy text-base text-[#F9EEDD] block opacity-90">
                   {language === 'ru' ? 'Номер телефона' : 'Phone number'}
                 </label>
                 <input

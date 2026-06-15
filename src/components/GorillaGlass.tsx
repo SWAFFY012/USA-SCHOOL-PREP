@@ -23,6 +23,7 @@ export default function GorillaGlass({
     <div
       className={`
         relative overflow-hidden
+        motion-reveal
         backdrop-blur-2xl
         transition-all duration-300
         ${isInteractive ? 'cursor-pointer hover:scale-[1.02] active:scale-[0.99]' : ''}

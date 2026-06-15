@@ -57,14 +57,10 @@ export default function Pricing({ language }: PricingProps) {
         {/* Section Header */}
         <div id="pricing-header" className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center space-x-2 bg-gold/5 border border-gold/20 px-3 py-1.5 rounded-full">
-              <Coins size={13} className="text-gold" />
-              <span className="font-mono text-[10px] uppercase tracking-widest text-gold font-bold">Tuition Investments</span>
-            </div>
-            <h2 id="pricing-title" className="font-serif text-3xl sm:text-4xl text-white font-normal tracking-tight leading-tight">
+            <h2 id="pricing-title" className="premium-section-title text-2xl sm:text-3xl text-white leading-tight">
               {t.pricing.title}
             </h2>
-            <p id="pricing-subtitle" className="font-serif text-lg sm:text-xl text-gray-300 italic font-light">
+            <p id="pricing-subtitle" className="poriadok-copy text-xl sm:text-2xl text-[#F5DED0] leading-relaxed">
               {t.pricing.subtitle}
             </p>
           </div>
@@ -123,7 +119,7 @@ export default function Pricing({ language }: PricingProps) {
                 <div className="space-y-6">
                   {/* Card Header text */}
                   <div>
-                    <h3 className="font-serif italic text-xl text-white font-medium">
+                    <h3 className="premium-section-title text-lg text-white leading-tight">
                       {plan.title}
                     </h3>
                   </div>
@@ -153,7 +149,7 @@ export default function Pricing({ language }: PricingProps) {
                         <div className="flex-shrink-0 w-4 h-4 bg-gold/10 border border-gold/25 rounded-md flex items-center justify-center text-gold mt-0.5">
                           <Check size={9} strokeWidth={3} />
                         </div>
-                        <span className="font-serif text-sm text-gray-300 font-light">
+                        <span className="poriadok-copy text-base text-[#F1D4C4]">
                           {feature}
                         </span>
                       </li>

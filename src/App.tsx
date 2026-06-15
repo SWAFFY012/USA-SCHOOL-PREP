@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Language } from './types';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -15,6 +15,67 @@ import Footer from './components/Footer';
 export default function App() {
   // Use Russian as default targeted language, with English fallback
   const [language, setLanguage] = useState<Language>('ru');
+
+  useEffect(() => {
+    const revealSelectors = [
+      '[id$="-header"]',
+      '#levels-cards-wrapper > *',
+      '#level-inspector-panel',
+      '#scenarios-list > *',
+      '#quiz-box-card > *',
+      '#quiz-options-grid > *',
+      '#teachers-section [id^="teacher-card-"]',
+      '#schedule-world-clocks > *',
+      '#schedule-category-filters > *',
+      '#schedule-table-wrapper [id^="schedule-row-"]',
+      '#formats-cards-deck > *',
+      '#pricing-cards-grid > *',
+      '#pricing-installment-notice',
+      '#cabinet-dashboard-card',
+      '#cabinet-section .grid > *',
+      '#trial-teaser-container',
+      '#trial-teaser-container > *',
+      '#trial-form-container',
+      '#roadmap-timeline > *',
+    ].join(',');
+
+    const observed = new WeakSet<Element>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle('is-visible', entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.14,
+        rootMargin: '0px 0px -8% 0px',
+      },
+    );
+
+    const prepareRevealElements = () => {
+      document.querySelectorAll<HTMLElement>(revealSelectors).forEach((el, index) => {
+        if (observed.has(el)) return;
+        observed.add(el);
+
+        const direction = index % 3 === 0 ? 'motion-left' : index % 3 === 1 ? 'motion-rise' : 'motion-right';
+        el.classList.add('motion-reveal', direction);
+        el.style.setProperty('--reveal-delay', `${Math.min((index % 5) * 55, 220)}ms`);
+        observer.observe(el);
+      });
+    };
+
+    prepareRevealElements();
+
+    const mutationObserver = new MutationObserver(() => {
+      prepareRevealElements();
+    });
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
+  }, [language]);
 
   // Interactive handler to smoothly scroll to student locker preview
   const handleOpenCabinet = () => {

@@ -50,14 +50,10 @@ export default function TrialLesson({ language }: TrialProps) {
           {/* Left Block: Creative visual & Guide download */}
           <div id="trial-teaser-container" className="lg:col-span-6 space-y-8">
             <div className="space-y-4 max-w-xl">
-              <div className="inline-flex items-center space-x-2 bg-gold/5 border border-gold/20 px-3 py-1.5 rounded-full">
-                <BookOpen size={13} className="text-gold" />
-                <span className="font-mono text-[10px] uppercase tracking-widest text-gold font-bold">Diagnostic Evaluation</span>
-              </div>
-              <h2 id="trial-title" className="font-serif text-3xl sm:text-4xl text-white font-normal tracking-tight">
+              <h2 id="trial-title" className="premium-section-title text-2xl sm:text-3xl text-white leading-tight">
                 {t.trial.title}
               </h2>
-              <p id="trial-subtitle" className="font-serif text-lg sm:text-xl text-gray-300 italic font-light leading-relaxed">
+              <p id="trial-subtitle" className="poriadok-copy text-xl sm:text-2xl text-[#F5DED0] leading-relaxed">
                 {t.trial.subtitle}
               </p>
             </div>
@@ -76,9 +72,8 @@ export default function TrialLesson({ language }: TrialProps) {
  
               <div id="trial-guide-incentive" className="sm:col-span-8 flex flex-col justify-between py-2 space-y-4">
                 <div className="space-y-1">
-                  <p className="font-mono text-[9px] text-gold uppercase tracking-widest font-bold">Relocation bonus textbook</p>
-                  <h4 className="font-serif italic text-base text-white font-medium">«Культурный код США 2026»</h4>
-                  <p className="font-serif text-sm text-gray-300 font-light italic leading-relaxed">
+                  <h4 className="poriadok-copy text-xl text-white">«Культурный код США 2026»</h4>
+                  <p className="poriadok-copy text-base text-[#F5DED0] leading-relaxed">
                     {language === 'ru' 
                       ? 'Полная дорожная книга: американский юмор, правила общения в Whole Foods и Starbucks, тонкости банковских транзакций.' 
                       : 'Step-by-step guidance: American hospitality culture, slang dictionary, tax brackets, and credit scores overview.'}
@@ -103,7 +98,7 @@ export default function TrialLesson({ language }: TrialProps) {
             {showStatusBanner && (
                <div className="bg-emerald-500/10 border border-emerald-500/25 p-4 rounded-lg flex items-center space-x-3 text-emerald-400 animate-fade-in">
                 <FileCheck size={16} />
-                <span className="font-sans text-xs">
+                <span className="poriadok-copy text-base">
                   {language === 'ru' 
                     ? 'Гайд "Культурный Код США 2026.pdf" успешно скачан!' 
                     : 'Guidebook "US Cultural Code 2026.pdf" downloaded successfully!'}
@@ -119,10 +114,10 @@ export default function TrialLesson({ language }: TrialProps) {
             {!sent ? (
               <form id="trial-assessment-form" onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="space-y-1.5">
-                  <h3 id="trial-form-title" className="font-serif italic text-xl text-white font-medium">
+                  <h3 id="trial-form-title" className="poriadok-copy text-2xl text-white">
                     {t.trial.formTitle}
                   </h3>
-                  <p className="font-sans text-xs text-[#A0A0A0] font-light">
+                  <p className="poriadok-copy text-base text-[#D6B7A8]">
                      {language === 'ru' ? 'Заполните поля, и наш методист забронирует слот.' : 'Enter details to claim custom diagnostic evaluation slot.'}
                   </p>
                 </div>
@@ -130,7 +125,7 @@ export default function TrialLesson({ language }: TrialProps) {
                 <div className="space-y-4">
                   {/* Name field */}
                   <div className="space-y-1.5 flex flex-col">
-                    <label className="font-mono text-[9px] uppercase text-gray-500 font-bold tracking-widest">{t.trial.nameLabel}</label>
+                    <label className="poriadok-copy text-base text-[#D6B7A8]">{t.trial.nameLabel}</label>
                     <input
                       type="text"
                       required
@@ -143,7 +138,7 @@ export default function TrialLesson({ language }: TrialProps) {
  
                   {/* Phone field */}
                   <div className="space-y-1.5 flex flex-col">
-                    <label className="font-mono text-[9px] uppercase text-gray-500 font-bold tracking-widest">{t.trial.phoneLabel}</label>
+                    <label className="poriadok-copy text-base text-[#D6B7A8]">{t.trial.phoneLabel}</label>
                     <input
                       type="text"
                       required
@@ -156,7 +151,7 @@ export default function TrialLesson({ language }: TrialProps) {
  
                   {/* Goal field */}
                   <div className="space-y-1.5 flex flex-col">
-                    <label className="font-mono text-[9px] uppercase text-gray-500 font-bold tracking-widest">{t.trial.targetLabel}</label>
+                    <label className="poriadok-copy text-base text-[#D6B7A8]">{t.trial.targetLabel}</label>
                     <input
                       type="text"
                       value={target}
@@ -168,7 +163,7 @@ export default function TrialLesson({ language }: TrialProps) {
                 </div>
 
                 {/* Terms notification check */}
-                <p className="font-sans text-[11px] text-gray-500 leading-snug">
+                <p className="poriadok-copy text-base text-[#A98C7F] leading-snug">
                   {language === 'ru' 
                     ? 'Нажимая на кнопку, вы соглашаетесь с обработкой персональных данных. Наш сервис абсолютно конфиденциален.' 
                     : 'We guarantee full privacy alignment in accordance with state laws. Relinquish fear of unauthorized exposure.'}
@@ -190,7 +185,7 @@ export default function TrialLesson({ language }: TrialProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <h4 className="font-serif italic text-xl text-white font-medium">
+                  <h4 className="poriadok-copy text-2xl text-white">
                     {language === 'ru' ? 'Заявка принята!' : 'Assessment Slot Registered!'}
                   </h4>
                   <p className="font-sans text-sm text-[#A0A0A0] max-w-sm mx-auto leading-relaxed font-light">
