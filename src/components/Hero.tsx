@@ -53,13 +53,13 @@ export default function Hero({ language }: HeroProps) {
             <div className="space-y-6">
               <motion.h1 
                 id="hero-headline" 
-                className="font-serif text-4xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[96px] leading-[1.08] tracking-tight text-white font-light"
+                className="nura-display nura-title-glow text-4xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[92px] leading-[1.05] text-white"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.9, ease: "easeOut", delay: 0.3 }}
               >
                 {t.hero.titleFirst} <br />
-                <span className="italic text-gold font-serif block mt-3 whitespace-nowrap text-2xl sm:text-3.5xl md:text-4.5xl lg:text-5xl xl:text-6xl 2xl:text-[72px] tracking-tight">
+                <span className="block mt-4 text-gold whitespace-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[68px] leading-[1.08]">
                   {t.hero.titleHighlight}
                 </span>
                </motion.h1>
@@ -67,7 +67,7 @@ export default function Hero({ language }: HeroProps) {
               {/* Premium Quality prep label - elegantly styled below the title, with NO surrounding badge box */}
               <motion.p
                 id="hero-badge-subtitle"
-                className="font-serif italic text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-[#DFC49E] tracking-normal font-light leading-tight mt-3"
+                className="nura-display nura-title-glow text-base sm:text-lg lg:text-xl xl:text-2xl text-[#F7E8D0] leading-tight mt-4 max-w-3xl"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease: "easeOut", delay: 0.5 }}
